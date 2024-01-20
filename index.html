@@ -31,6 +31,13 @@
 
   <body class="max-w-[2000px] mx-auto text-neutral-900 bg-white">
     <nav
+      x-data="{ scrolledPastHeader: false }"
+      x-init="() => {
+                     window.addEventListener('scroll', () => {
+                         scrolledPastHeader = window.scrollY > document.querySelector('header').offsetHeight;
+                     });
+                 }"
+      :class="{ 'bg-white transition': scrolledPastHeader, 'bg-amber-400': !scrolledPastHeader }"
       class="mx-auto p-3 lg:p-0 xl:p-0 bg-amber-400 fixed w-full z-50 shadow-2xl"
     >
       <div class="container mx-auto flex items-center justify-between">
@@ -69,12 +76,6 @@
         </button>
         <div
           role="menubar"
-          x-data="{ scrolledPastHeader: false }"
-          x-init="() => {
-                     window.addEventListener('scroll', () => {
-                         scrolledPastHeader = window.scrollY > document.querySelector('header').offsetHeight;
-                     });
-                 }"
           :class="{ 'bg-white transition': scrolledPastHeader, 'bg-amber-400': !scrolledPastHeader }"
           class="hidden flex-col gap-4 absolute z-40 right-0 left-0 top-16 bg-amber-400 shadow-xl text-center text-lg p-6 items-center lg:flex lg:flex-row lg:static lg:shadow-none lg:justify-between lg:w-full"
         >
@@ -340,10 +341,7 @@
               Sign Up
             </a>
           </div>
-          <img
-            src="./asset/images/table.png"
-            alt="Table"
-          />
+          <img src="./asset/images/table.png" alt="Table" />
         </div>
         <div
           class="absolute -bottom-6 -right-32 -z-10 aspect-square md:border-8 border-amber-400 rounded-full md:w-64 lg:w-96 xl:max-w-lg"
@@ -359,11 +357,7 @@
     >
       <div class="flex flex-wrap justify-center gap-12 md:gap-6 lg:gap-20">
         <div class="md:flex-1 md:max-w-sm relative">
-          <img
-            src="./asset/images/lamp.png"
-            alt="Lamp"
-            class="mx-auto"
-          />
+          <img src="./asset/images/lamp.png" alt="Lamp" class="mx-auto" />
           <a
             href="#"
             class="py-2 px-6 bg-amber-400 dark:text-neutral-900 w-max mx-auto mt-12 md:mb-12 flex gap-2 shadow-xl hover:shadow-none transition-shadow focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-md ring-offset-4 ring-offset-white dark:ring-amber-400 dark:ring-offset-neutral-800"
