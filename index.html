@@ -31,10 +31,15 @@
 
     <!-- alpine.js is used for handling toggle of navbar on mobile screens, switch it with your own front end framework
         if needed -->
+    
+
     <script
       src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"
       defer
     ></script>
+
+    
+
   </head>
 
   <body class="max-w-[2000px] mx-auto text-neutral-900 bg-white">
@@ -45,8 +50,8 @@
                          scrolledPastHeader = window.scrollY > document.querySelector('header').offsetHeight;
                      });
                  }"
-      :class="{ 'bg-white transition': scrolledPastHeader, 'bg-amber-400': !scrolledPastHeader }"
-      class="mx-auto p-0 bg-amber-400 fixed w-full z-50 shadow-xl"
+      :class="{ 'bg-white transition shadow-xl': scrolledPastHeader, 'bg-[#feedcf]': !scrolledPastHeader }"
+      class="mx-auto p-0 fixed w-full z-50 "
     >
       <div class="container mx-auto flex items-center justify-between">
         <a
@@ -84,8 +89,8 @@
         </button>
         <div
           role="menubar"
-          :class="{ 'bg-white transition': scrolledPastHeader, 'bg-amber-400': !scrolledPastHeader }"
-          class="hidden flex-col gap-4 absolute z-40 right-0 left-0 top-16 bg-amber-400 shadow-xl text-center text-lg px-6 items-center lg:flex lg:flex-row lg:static lg:shadow-none lg:justify-between lg:w-full"
+          :class="{ 'bg-white transition shadow-xl': scrolledPastHeader, 'bg-[#feedcf]': !scrolledPastHeader }"
+          class="hidden flex-col gap-4 absolute z-40 right-0 left-0 top-16 text-center text-lg px-6 items-center lg:flex lg:flex-row lg:static lg:shadow-none lg:justify-between lg:w-full"
         >
           <a
             role="menuitem"
@@ -117,9 +122,10 @@
         </div>
       </div>
     </nav>
-    <header class="relative pt-20 md:pt-28 lg:pt-46">
+    <!--Hero Section-->
+    <!-- <header class="relative pt-20 md:pt-28 lg:pt-46">
       <div
-        class="absolute inset-0 bottom-6 md:bottom-16 xl:bottom-28 -z-10 bg-gradient-to-b from-amber-300 to-amber-500 rounded-ss-2xl rounded-ee-[6.5rem] lg:rounded-ee-[200px]"
+        class="absolute inset-0 bottom-6 md:bottom-16 xl:bottom-28 -z-10 bg-gradient-to-b from-[#feedcf] to-[#fdb73e] rounded-ss-2xl rounded-ee-[6.5rem] lg:rounded-ee-[200px]"
       ></div>
       <div class="container mx-auto grid grid-rows-1 place-items-end px-2">
         <img
@@ -128,6 +134,37 @@
           alt="Couch"
         />
       </div>
+    </header> -->
+
+    <header class="hero py-12 xl:pt-12 bg-[#FEEDCF] xl:pb-8 overflow-hidden">
+
+        <div class="container mx-auto h-full mt-16 bg-[#FEEDCF] px-12 md:px-52">
+          <div class="flex flex-col xl:flex-row items-center justify-between h-full" >
+
+
+
+          <div class="hero__text xl:w-[48%] text-center xl:text-left">
+
+              <div class="flex items-center bg-white py-1 px-[20px] w-max gap-x-2 mb-[26px] rounded-full mx-auto xl:mx-0">
+                <i class="fa-solid fa-heart-pulse fa-beat-fade fa-lg" style="color: #fbcd27;"></i>
+
+                <div class="uppercase text-base font-medium text-amber-400 tracking-[2.24px]">
+                  Live your life
+                </div>
+              </div>
+
+              <h1 class="text-3xl md:text-4xl font-bold mb-6">We care about your health</h1>
+
+                <p class="mb-[42px] md:max-w-xl">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit, enim modi fuga natus ipsa dolore, quae praesentium quam perferendis saepe non unde facilis facere esse alias. Expedita cum odio reprehenderit.</p>
+
+                <button class="py-2 px-4 bg-amber-300 text-neutral font-semibold rounded-full shadow-md hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-opacity-75 mx-auto xl:ml-0">Contact us</button>
+
+            </div>
+            <div class="hero__img hidden xl:flex max-w-[250px] max-h-[500px] self-end me-28">
+              <img src="./asset/images/family.png" alt="" >
+            </div>
+          </div>
+        </div>
     </header>
     <main
       class="grid gap-12 sm:gap-16 md:gap-24 lg:gap-32 px-8 overflow-hidden"
@@ -164,7 +201,7 @@
           <div
             class="product_items grid gap-4 justify-items-center text-center md:flex-1"
           >
-            <div class="rounded border border-amber-400 p-1 w-32 h-20">
+            <div class="rounded shadow-lg bg-[#F2F7FF] p-1 w-32 h-20">
               <img
                 src="./asset/images/2w.png"
                 class="w-full h-full object-contain"
@@ -179,7 +216,7 @@
             class="product_items grid gap-4 justify-items-center text-center md:flex-1"
           >
             <a href="#" onclick="event.preventDefault()">
-              <div class="rounded border border-amber-400 p-1 w-32 h-20">
+              <div class="rounded shadow-lg bg-[#F2F7FF] p-1 w-32 h-20">
                 <img
                   src="./asset/images/4w.png"
                   class="w-full h-full object-contain"
@@ -193,7 +230,7 @@
           <div
             class="product_items grid gap-4 justify-items-center text-center md:flex-1"
           >
-            <div class="rounded border border-amber-400 p-1 w-32 h-20">
+            <div class="rounded shadow-lg bg-[#F2F7FF] p-1 w-32 h-20">
               <img
                 src="./asset/images/fire.png"
                 class="w-full h-full object-contain"
@@ -207,7 +244,7 @@
           <div
             class="product_items grid gap-4 justify-items-center text-center md:flex-1"
           >
-            <div class="rounded border border-amber-400 p-1 w-32 h-20">
+            <div class="rounded shadow-lg bg-[#F2F7FF] p-1 w-32 h-20">
               <img
                 src="./asset/images/marine.png"
                 class="w-full h-full object-contain"
@@ -221,7 +258,7 @@
           <div
             class="product_items grid gap-4 justify-items-center text-center md:flex-1"
           >
-            <div class="rounded border border-amber-400 p-1 w-32 h-20">
+            <div class="rounded shadow-lg bg-[#F2F7FF] p-1 w-32 h-20">
               <img
                 src="./asset/images/house.png"
                 class="w-full h-full object-contain"
@@ -235,7 +272,7 @@
           <div
             class="product_items grid gap-4 justify-items-center text-center md:flex-1"
           >
-            <div class="rounded border border-amber-400 p-1 w-32 h-20">
+            <div class="rounded shadow-lg bg-[#F2F7FF] p-1 w-32 h-20">
               <img
                 src="./asset/images/travel.png"
                 class="w-full h-full object-contain"
@@ -455,7 +492,7 @@
       </div>
     </section>
     <!-- Footer -->
-    <footer class="relative mt-3  text-white bg-gradient-to-b from-[#0B0D17] to-[#16171E]">
+    <footer class="relative mt-3  text-white bg-gradient-to-b from-[#0B0D17] to-[#16171E] overflow-hidden">
       <div class="absolute top-0 left-0 w-full overflow-hidden md:hidden">
         <svg
           data-name="Layer 1"
@@ -473,7 +510,7 @@
       </div>
 
       <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 p-16">
-        <div class="flex flex-col gap-5">
+        <div class="flex flex-col gap-5 z-10">
           <p
             class="text-[16px] list-none font-semibold text-stone-300 pt-2 uppercase"
           >
@@ -524,7 +561,7 @@
           </div>
         </div>
 
-        <div class="flex flex-col gap-5">
+        <div class="flex flex-col gap-5 z-10">
           <ul>
             <li
               class="text-[16px] list-none font-semibold text-stone-300 py-2 uppercase"
@@ -559,7 +596,7 @@
           </ul>
         </div>
 
-        <div class="flex flex-col gap-5">
+        <div class="flex flex-col gap-5 z-10">
           <ul>
             <li
               class="text-[16px] list-none font-semibold text-stone-300 py-2 uppercase"
@@ -592,7 +629,7 @@
           </ul>
         </div>
 
-        <div class="flex flex-col gap-5">
+        <div class="flex flex-col gap-5 z-10">
           <ul>
             <li
               class="text-[16px] list-none font-semibold text-stone-300 py-2 uppercase"
@@ -629,10 +666,39 @@
       </div>
 
       <div class="flex justify-center align-middle text-[12px] text-white pb-4">
-        <p >© 2024 Copyright MutualGlobal.com. All Rights Reserved</p>
+        <p> © 2024 Copyright MutualGlobal.com. All Rights Reserved</p>
       </div>
+
+      <!-- SVG Back grounds -->
+      <div class="absolute top-0 left-0 opacity-5 w-[300px] h-[300px] md:w-[500px] md:h-[500px] ">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#FEEDCF" d="M43.4,-9.2C51.9,12.2,51.6,41.4,37,52.3C22.4,63.2,-6.4,55.9,-25.7,40.7C-45,25.4,-54.7,2.2,-48.8,-15.5C-42.9,-33.3,-21.5,-45.7,-2,-45C17.4,-44.4,34.8,-30.7,43.4,-9.2Z" transform="translate(100 100)" />
+        </svg>
+      </div>
+      <div class="absolute top-0 md:top-10 left-0 opacity-10 w-[300px] h-[300px] md:w-[500px] md:h-[500px] ">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#FDB73E" d="M37.1,-28.1C53.1,-21,74.8,-10.5,78.5,3.7C82.2,17.9,68,35.8,51.9,52.3C35.8,68.8,17.9,83.7,-1.7,85.5C-21.4,87.2,-42.7,75.6,-50.7,59.2C-58.7,42.7,-53.4,21.4,-54.4,-1C-55.3,-23.3,-62.6,-46.6,-54.6,-53.7C-46.6,-60.7,-23.3,-51.5,-6.4,-45.1C10.5,-38.7,21,-35.1,37.1,-28.1Z" transform="translate(100 100)" />
+        </svg>
+      </div>
+
+      <div class="absolute md:top-10 bottom-0 right-0 opacity-5 w-[300px] h-[300px] md:w-[500px] md:h-[500px] ">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#FEEDCF" d="M32.9,-39.8C41.5,-24.4,46.3,-12.2,46.1,-0.2C45.9,11.9,40.8,23.8,32.3,31.8C23.8,39.8,11.9,43.9,-5.6,49.5C-23.1,55.1,-46.2,62.2,-61.2,54.2C-76.1,46.2,-82.9,23.1,-77.7,5.2C-72.5,-12.7,-55.3,-25.4,-40.4,-40.8C-25.4,-56.3,-12.7,-74.4,-0.2,-74.1C12.2,-73.9,24.4,-55.3,32.9,-39.8Z" transform="translate(100 100)" />
+        </svg>
+      </div>    
+
+      <div
+          class="absolute -top-52 -left-32 z-0 aspect-square border-8 border-[#FEEDCF] rounded-full w-64 w-96 xl:max-w-lg opacity-10"
+        ></div>
+
+      <div
+          class="absolute -bottom-56 -right-32 z-0 aspect-square border-8 border-amber-400 rounded-full w-64 w-96 xl:max-w-lg opacity-10"
+        ></div>
+        
     </footer>
   </body>
+
+  <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js" ></script>
 
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
@@ -640,7 +706,6 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   ></script>
-  <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
   <script>
     const sr = ScrollReveal({
       origin: "bottom",
@@ -649,7 +714,7 @@
       delay: 100,
     });
 
-    sr.reveal(".header_img");
+    // sr.reveal(".header_img");
     sr.reveal(".product_items", {
       interval: 200,
       origin: "bottom",
@@ -659,11 +724,15 @@
       origin: "top",
     });
 
-    // ScrollReveal().reveal('.header_img', {
-    //     origin: 'bottom',
-    //     distance: '60px',
-    //     duration: 3000,
-    //     delay: 600,
-    // });
+    ScrollReveal().reveal('.header_img', {
+        origin: 'bottom',
+        distance: '60px',
+        duration: 3000,
+        delay: 600,
+    });
+
+    // new hero
+    sr.reveal('.hero__text', {origin: 'top'});
+    sr.reveal('.hero__img');
   </script>
 </html>
